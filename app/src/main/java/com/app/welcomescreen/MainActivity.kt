@@ -3,10 +3,12 @@ package com.app.welcomescreen
 /*
 Ngonidzaishe Erica Chipato
 218327315
+Practical 01
  */
 
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.fonts.FontStyle
 import androidx.compose.material.AlertDialog
 import android.os.Bundle
@@ -17,6 +19,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.MutableTransitionState
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -36,18 +39,26 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.app.welcomescreen.ui.theme.Teal200
 import androidx.compose.material.ButtonDefaults.buttonColors as buttonColors1
-import androidx.compose.material.Text as Text1
 
 
 
 class MainActivity : ComponentActivity() {
+    lateinit var navController: NavHostController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
 
             MaterialTheme {
+
+                navController = rememberNavController()
+                SetupNavGraph(navController = navController)
+
             TextView("To My Jetpack Compose Journey")
             Button("Info")
 
@@ -61,7 +72,27 @@ class MainActivity : ComponentActivity() {
 
                     }
                 }
-            }
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Bottom
+            ) {
+
+            Box()
+
+            {
+                TextButton(
+                    onClick = {val intent= Intent(this@MainActivity ,Journey::class.java)
+                        startActivity(intent) },
+                    border = BorderStroke(5.dp, Color.White),
+                    contentPadding = PaddingValues(16.dp),
+                    modifier = Modifier
+                        .size(width = 300.dp, height = 50.dp)
+                        .background(Color.Blue),
+                ) {
+                   Text(text = "Start Journey", color = Color.Black)
+                }
+            }}
         }
     }
 
@@ -76,7 +107,7 @@ fun TextView(name: String) {
         verticalArrangement = Arrangement.Center
     ) {
 
-            Text1(text = "Welcome, $name!",
+            Text(text = "Welcome, $name!",
                 fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
                 fontWeight = FontWeight.Bold,
                 color = Color.Blue)
@@ -117,13 +148,13 @@ fun Button (text: String) {
                 tint = Color.DarkGray,
                 modifier = Modifier.size(50.dp)
             )
-            Text1(text = "Info")
+            Text(text = "Info")
         }
         if (openDialog.value){
             AlertDialog(
                 onDismissRequest = {openDialog.value = false},
-                title = {Text1(text = "My Journey")},
-                text = {Text1 (
+                title = {Text(text = "My Journey")},
+                text = {Text (
                        text = "I anticipate to learn  on how I can become a better developer using Jetpack compose. " +
                                "Discovery ways to use material design is something I have always wanted to learn "
                         )},
@@ -132,7 +163,7 @@ fun Button (text: String) {
                         openDialog.value = false
                         backgroundColor.value = Color.Magenta
                     }) {
-                        Text1(text = "Confirm")
+                        Text(text = "Confirm")
                     }
                 },
                 dismissButton = {
@@ -144,7 +175,7 @@ fun Button (text: String) {
                             contentColor(Color.White )
                         )
                     ){
-                        Text1(text= "Dismiss")
+                        Text(text= "Dismiss")
                     }
                 }
             )
@@ -152,18 +183,13 @@ fun Button (text: String) {
         }
 
     }
-}
+}}
 
 fun contentColor(white: Color): Color {
     TODO("Not yet implemented")
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewButton() {
-    Button("Info")
-}
 
 
 

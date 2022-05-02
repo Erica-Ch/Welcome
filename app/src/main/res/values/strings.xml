@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WelcomeScreen</string>
+    <string name="title_activity_journey">Journey</string>
 </resources>

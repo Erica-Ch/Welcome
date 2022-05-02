@@ -7,6 +7,7 @@ Ngonidzaishe Erica Chipato
 
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.fonts.FontStyle
 import androidx.compose.material.AlertDialog
 import android.os.Bundle
@@ -17,6 +18,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.MutableTransitionState
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -61,7 +63,26 @@ class MainActivity : ComponentActivity() {
 
                     }
                 }
-            }
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Bottom
+            ) {
+
+            Box()
+
+            {
+                TextButton(
+                    onClick = {val intent= Intent(this@MainActivity ,Journey::class.java)
+                        startActivity(intent) },
+                    border = BorderStroke(5.dp, Color.White),
+                    contentPadding = PaddingValues(16.dp),
+                    modifier = Modifier.size(width = 300.dp, height = 50.dp)
+                        .background(Color.Blue),
+                ) {
+                   Text1(text = "Start Journey", color = Color.Black)
+                }
+            }}
         }
     }
 
@@ -152,18 +173,13 @@ fun Button (text: String) {
         }
 
     }
-}
+}}
 
 fun contentColor(white: Color): Color {
     TODO("Not yet implemented")
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewButton() {
-    Button("Info")
-}
 
 
 

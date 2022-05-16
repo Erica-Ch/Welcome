@@ -26,7 +26,7 @@ import androidx.navigation.compose.rememberNavController
 import com.app.welcomescreen.ui.theme.WelcomeScreenTheme
 import androidx.compose.material.Text as Text1
 
-class Journey : ComponentActivity() {
+class Journey(navController: NavHostController) : ComponentActivity() {
     lateinit var navController: NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,7 +66,7 @@ class Journey : ComponentActivity() {
 
                     {
                         TextButton(
-                            onClick = {navController.navigate(Screen.Mod.route) },
+                            onClick = { navController.navigate(Screen.Mod.route) },
                             border = BorderStroke(5.dp, Color.White),
                             contentPadding = PaddingValues(16.dp),
                             modifier =Modifier.size(width = 300.dp, height = 50.dp)

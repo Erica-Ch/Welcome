@@ -47,7 +47,7 @@ import androidx.compose.material.ButtonDefaults.buttonColors as buttonColors1
 
 
 
-class MainActivity : ComponentActivity() {
+class MainActivity(navController: NavHostController) : ComponentActivity() {
     lateinit var navController: NavHostController
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -118,7 +118,7 @@ fun TextView(name: String) {
 
     }
 
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 @Composable
 fun PreviewTextView() {
     TextView("To My Jetpack Compose Journey")

@@ -34,7 +34,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 
 
-class ModuleActivity : AppCompatActivity() {
+class ModuleActivity(navController: NavHostController) : AppCompatActivity() {
     lateinit var navController: NavHostController
     private val moduleView: ModuleView by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {

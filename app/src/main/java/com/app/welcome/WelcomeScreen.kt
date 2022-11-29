@@ -1,6 +1,7 @@
 package com.app.welcome
 
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -89,11 +90,11 @@ import com.app.welcome.ui.theme.Screens
                     text = {
                         Text(text = " The previous year we  learned how to create " +
                                     "mobile applications using java. Although it was daunting" +
-                                    " at first to use kotlin this year it has been an exciting" +
+                                    " at first to use Kotlin this year it has been an exciting" +
                                     " journey. Having learnt that jetpack compose is used to" +
                                     " build faster better applications. I am able to create my own" +
-                                    " app and learn along the way. Using material" +
-                                    " design in my application has given me a new prespective " +
+                                    " apps and learn along the way. Using material" +
+                                    " design in my applications has given me a new prespective " +
                                     " on design. Lastly, I learned errors are not final it's part"
                                     + " of my learning journey.")
                     },
@@ -158,6 +159,7 @@ import com.app.welcome.ui.theme.Screens
 
 
 
+@SuppressLint("ComposableNaming")
 @Preview(showBackground = true)
        @Composable
         private fun showWelcome() {

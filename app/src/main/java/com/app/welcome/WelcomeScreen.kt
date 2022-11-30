@@ -162,7 +162,7 @@ import com.app.welcome.ui.theme.Screens
 @SuppressLint("ComposableNaming")
 @Preview(showBackground = true)
        @Composable
-        private fun showWelcome() {
+        private fun   showWelcome() {
             WelcomeScreen(rememberNavController())
         }
 

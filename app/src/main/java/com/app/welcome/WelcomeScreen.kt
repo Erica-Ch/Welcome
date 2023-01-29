@@ -89,12 +89,12 @@ import com.app.welcome.ui.theme.Screens
                     },
                     text = {
                         Text(text = " The previous year we  learned how to create " +
-                                    "mobile applications using java. Although it was daunting" +
+                                    "mobile applications using Java. Although it was daunting" +
                                     " at first to use Kotlin this year it has been an exciting" +
-                                    " journey. Having learnt that jetpack compose is used to" +
+                                    " journey. Having learnt that Jetpack Compose is used to" +
                                     " build faster better applications. I am able to create my own" +
-                                    " apps and learn along the way. Using material" +
-                                    " design in my applications has given me a new prespective " +
+                                    " app and learn along the way. Using Material" +
+                                    " design in my app has given me a new prespective " +
                                     " on design. Lastly, I learned errors are not final it's part"
                                     + " of my learning journey.")
                     },

@@ -94,7 +94,7 @@ import com.app.welcome.ui.theme.Screens
                                     " journey. Having learnt that Jetpack Compose is used to" +
                                     " build faster better applications. I am able to create my own" +
                                     " app and learn along the way. Using Material" +
-                                    " design in my app has given me a new prespective " +
+                                    " design in my app has given me a new perspective " +
                                     " on design. Lastly, I learned errors are not final it's part"
                                     + " of my learning journey.")
                     },
